@@ -13,11 +13,12 @@ Example
 # My solution
 # __________________________________
 
-# def duplicate_count(text):
-text = "aAbbbBcccDccDCCeEE"
-text = text.lower()
-print(text)
-a = {}
-for i in text :
-    print(i,"apparait",text.count(i), "fois")
-
+def duplicate_count(text):
+    text = text.lower()
+    a = []
+    for i in text :
+        if text.count(i)>= 2 :
+            a.append(i)
+    a = list(set(a))
+    
+    return (len(a))
