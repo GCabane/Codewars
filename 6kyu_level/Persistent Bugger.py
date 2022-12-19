@@ -10,14 +10,13 @@ For example (Input --> Output):
 
 My solution
 -------------------"""
-
-n = 39
-n=str(n)
-
-while n.length >1 :
-    n.split('')
-res=n[0]
-for elements in n :
-    res.append(res * elements) 
-print(n)
-print(res)
+def persistence(n):
+    s=0
+    while n > 9:
+        n_str = str(n) 
+        res = 1
+        for i in range(len(n_str)):
+            res *= int(n_str[i])
+        s += 1
+        n = res
+    return s
